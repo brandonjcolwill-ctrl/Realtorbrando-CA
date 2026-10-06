@@ -30,6 +30,8 @@
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="Pages">
               <a href="index.html">Home</a>
+      <a href="buyers.html" class="nav-hub">Buying</a>
+      <a href="sellers.html" class="nav-hub">Selling</a>
       <a href="neighborhoods.html">Neighborhoods</a>
       <a href="market.html">Market Updates</a>
       <a href="guide.html">Free Guide</a>
@@ -119,7 +121,7 @@
       <p>Brandon Colwill &middot; HomeLife District Realty</p>
       <p class="domain">realtorbrando.ca</p>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="index.html">Home</a><a href="neighborhoods.html">Neighborhoods</a><a href="market.html">Market Updates</a><a href="guide.html">Free Guide</a><a href="valuation.html">Free Valuation</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="calculator.html">Mortgage Calculator</a>
+        <a href="index.html">Home</a><a href="buyers.html">Buying</a><a href="sellers.html">Selling</a><a href="neighborhoods.html">Neighborhoods</a><a href="market.html">Market Updates</a><a href="guide.html">Free Guide</a><a href="valuation.html">Free Valuation</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="calculator.html">Mortgage Calculator</a>
       </nav>
     </div>
   </footer>
@@ -251,9 +253,9 @@
     if(has('hi','hello','hey','morning','afternoon','evening')&&t.trim().length<14)
       return "Hey! Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?";
     if(has('worth','value','valuation','sell','selling','list my','price of my','my home','my house','my condo'))
-      return "You can get a <b>free home valuation</b> in about 30 seconds, no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
+      return "You can get a <b>free home valuation</b> in about 30 seconds, no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>And here's <a href='sellers.html'>how selling works</a>, including exactly how I'd market your home.<br><br>Or want Brandon to walk you through the numbers on a call?";
     if(has('buy','buying','purchase','first time','first-time','fhsa','hbp','down payment','pre-approval','preapproval','mortgage'))
-      return "Smart move getting informed first. Try the <a href='calculator.html'>mortgage calculator</a> for a quick monthly estimate, then start with the <a href='guide.html'>First-Time Buyer's Guide →</a>: down payments, the FHSA, and Toronto's land-transfer rebates explained.<br><br>Want Brandon to build you a personalized buying plan?";
+      return "Smart move getting informed first. Start with <a href='buyers.html'>how buying works</a>: the 5-step process, real costs, and FAQ. Then try the <a href='calculator.html'>mortgage calculator</a> and grab the <a href='guide.html'>First-Time Buyer's Guide →</a>.<br><br>Want Brandon to build you a personalized buying plan?";
     if(has('commission','fee','charge','cost to sell','how much do you'))
       return "Brandon's commission is competitive and always discussed upfront. Every home is different, so he quotes exact numbers for your place. Want him to run them for you?";
     if(has('neighbourhood','neighborhood','area','areas','location','where'))
