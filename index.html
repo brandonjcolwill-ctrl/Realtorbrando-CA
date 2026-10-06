@@ -14,7 +14,8 @@
 <header class="site-header" aria-label="Primary navigation">
     <div class="wrap topline">
       <div class="identity"><a href="index.html" style="text-decoration:none">Brandon Colwill &middot; Real Estate</a></div>
-      <nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Pages">
               <a href="index.html" aria-current="page">Home</a>
       <a href="neighborhoods.html">Neighborhoods</a>
       <a href="market.html">Market Updates</a>
@@ -23,6 +24,7 @@
       <a href="about.html">About</a>
       <a href="valuation.html" class="nav-cta">What&rsquo;s my home worth?</a>
       </nav>
+      <div class="nav-scrim" aria-hidden="true"></div>
     </div>
   </header>
   <main>
@@ -142,7 +144,22 @@
     <a class="mcta mcta-value" href="valuation.html">Free Valuation</a>
   </div>
 <script>
-(function(){var h=document.querySelector('.site-header');if(!h)return;function t(){h.classList.toggle('scrolled',window.scrollY>40)}t();addEventListener('scroll',t,{passive:true});})();
+(function(){
+  var h=document.querySelector('.site-header');
+  if(h){function t(){h.classList.toggle('scrolled',window.scrollY>40)}t();addEventListener('scroll',t,{passive:true});}
+  var b=document.querySelector('.nav-toggle'),n=document.querySelector('.main-nav'),s=document.querySelector('.nav-scrim');
+  if(b&&n){
+    function close(){document.body.classList.remove('nav-open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu');}
+    b.addEventListener('click',function(){
+      var open=document.body.classList.toggle('nav-open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+      b.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+    n.addEventListener('click',function(e){if(e.target.closest('a'))close();});
+    if(s)s.addEventListener('click',close);
+    addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+})();
 </script>
 </body>
 </html>
