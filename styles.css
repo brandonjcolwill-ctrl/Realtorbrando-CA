@@ -273,6 +273,27 @@
     }
 
 /* ===== Multi-page redesign additions ===== */
+/* Warmer, more welcoming palette (overrides base theme) */
+:root{
+  --paper:#faf6f0;
+  --paper-2:#f0e8d9;
+  --ink:#2c2620;
+  --muted:#6f6459;
+  --line:#ddd2c1;
+  --accent:#b0552f;
+  --accent-ink:#fff9f4;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#151210;
+    --paper-2:#1f1a15;
+    --ink:#f5efe6;
+    --muted:#b8ab9c;
+    --line:#3e362c;
+    --accent:#d08054;
+    --accent-ink:#1d1310;
+  }
+}
 .site-header{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);transition:box-shadow .25s}
 .site-header .topline{border-bottom:none}
 .site-header.scrolled{box-shadow:0 8px 28px rgba(20,16,10,.10)}
