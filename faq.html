@@ -31,7 +31,7 @@
     <div class="wrap page-hero">
       <p class="eyebrow">FAQ</p>
       <h1>Questions, answered straight.</h1>
-      <p class="hero-lede">The things buyers and sellers ask me most &mdash; in plain English, no jargon.</p>
+      <p class="hero-lede">The things buyers and sellers ask me most, in plain English. No jargon.</p>
     </div>
     <section><div class="wrap"><div class="faq-list">
       <details class="faq-item">
@@ -40,7 +40,7 @@
       </details>
       <details class="faq-item">
         <summary>What is the FHSA and how does it work?</summary>
-        <div class="faq-a"><p>The First Home Savings Account lets you contribute up to <strong>$8,000 per year</strong> (lifetime max <strong>$40,000</strong>). Contributions are tax-deductible going in and tax-free coming out when used for your first home &mdash; and unlike some programs, you <strong>never repay it</strong>. If you haven&rsquo;t opened one yet, it&rsquo;s usually the first account to fund.</p></div>
+        <div class="faq-a"><p>The First Home Savings Account lets you contribute up to <strong>$8,000 per year</strong> (lifetime max <strong>$40,000</strong>). Contributions are tax-deductible going in and tax-free coming out when used for your first home, and unlike some programs, you <strong>never repay it</strong>. If you haven&rsquo;t opened one yet, it&rsquo;s usually the first account to fund.</p></div>
       </details>
       <details class="faq-item">
         <summary>What is the Home Buyers&rsquo; Plan?</summary>
@@ -48,7 +48,7 @@
       </details>
       <details class="faq-item">
         <summary>Why do people say Toronto has a &lsquo;double&rsquo; land transfer tax?</summary>
-        <div class="faq-a"><p>Buy inside the City of Toronto and you pay <strong>both</strong> the provincial land transfer tax <strong>and</strong> Toronto&rsquo;s municipal land transfer tax. On a $700,000 home that&rsquo;s roughly <strong>$20,950 combined</strong> &mdash; due in cash on closing day. The good news: eligible first-time buyers get rebates of up to <strong>$4,000</strong> provincially and <strong>$4,475</strong> on the Toronto portion.</p></div>
+        <div class="faq-a"><p>Buy inside the City of Toronto and you pay <strong>both</strong> the provincial land transfer tax <strong>and</strong> Toronto&rsquo;s municipal land transfer tax. On a $700,000 home that&rsquo;s roughly <strong>$20,950 combined</strong>, due in cash on closing day. The good news: eligible first-time buyers get rebates of up to <strong>$4,000</strong> provincially and <strong>$4,475</strong> on the Toronto portion.</p></div>
       </details>
       <details class="faq-item">
         <summary>What will I pay at closing besides the down payment?</summary>
@@ -60,19 +60,19 @@
       </details>
       <details class="faq-item">
         <summary>How does your free home valuation work?</summary>
-        <div class="faq-a"><p>Fill out the short form with your property details and I&rsquo;ll put together a clear, honest valuation based on recent comparable sales in your area &mdash; what similar homes actually sold for, what&rsquo;s moving right now, and practical next steps if you&rsquo;re thinking of selling. Free, no obligation, no pressure.</p></div>
+        <div class="faq-a"><p>Fill out the short form with your property details and I&rsquo;ll put together a clear, honest valuation based on recent comparable sales in your area: what similar homes actually sold for, what&rsquo;s moving right now, and practical next steps if you&rsquo;re thinking of selling. Free, no obligation, no pressure.</p></div>
       </details>
       <details class="faq-item">
         <summary>How do you get paid when I buy a home?</summary>
-        <div class="faq-a"><p>In most GTA transactions, the seller&rsquo;s brokerage offers compensation to the buyer&rsquo;s brokerage through the MLS system &mdash; so buyers typically don&rsquo;t pay their agent directly out of pocket. We&rsquo;ll go over exactly how compensation works in your situation before you sign anything.</p></div>
+        <div class="faq-a"><p>In most GTA transactions, the seller&rsquo;s brokerage offers compensation to the buyer&rsquo;s brokerage through the MLS system, so buyers typically don&rsquo;t pay their agent directly out of pocket. We&rsquo;ll go over exactly how compensation works in your situation before you sign anything.</p></div>
       </details>
       <details class="faq-item">
-        <summary>I&rsquo;m thinking of selling &mdash; when should we talk?</summary>
-        <div class="faq-a"><p><strong>Two to three months</strong> before you&rsquo;d like to list is ideal. That gives us time for the valuation, a walkthrough of what to fix (and what not to bother with), staging guidance, and timing the market &mdash; without rushing any of it.</p></div>
+        <summary>I&rsquo;m thinking of selling. When should we talk?</summary>
+        <div class="faq-a"><p><strong>Two to three months</strong> before you&rsquo;d like to list is ideal. That gives us time for the valuation, a walkthrough of what to fix (and what not to bother with), staging guidance, and timing the market, without rushing any of it.</p></div>
       </details>
       <details class="faq-item">
         <summary>What areas do you serve?</summary>
-        <div class="faq-a"><p>The Greater Toronto Area, with a focus on <strong>Toronto, North York, Scarborough, Etobicoke, Vaughan and Markham</strong>. If your move touches the GTA, I can help &mdash; just ask.</p></div>
+        <div class="faq-a"><p>The Greater Toronto Area, with a focus on <strong>Toronto, North York, Scarborough, Etobicoke, Vaughan and Markham</strong>. If your move touches the GTA, I can help. Just ask.</p></div>
       </details>
     </div></div></section>
 
@@ -186,12 +186,12 @@
   },7000);
   function startLead(){
     lead={step:1,name:'',phone:'',interest:''};
-    say("Absolutely — Brandon loves talking real estate. What's your <b>full name</b>?");
+    say("Absolutely! Brandon loves talking real estate. What's your <b>full name</b>?");
   }
   function submitLead(){
     var payload={name:lead.name,phone:lead.phone,interest:lead.interest,
       _subject:'Chatbot lead from realtorbrando.ca',
-      message:'New chat lead: '+lead.name+' ('+lead.phone+') — interested in: '+lead.interest};
+      message:'New chat lead: '+lead.name+' ('+lead.phone+'), interested in: '+lead.interest};
     try{
       fetch('https://formsubmit.co/ajax/brandonjcolwill@gmail.com',{method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -214,26 +214,26 @@
     if(has('hi','hello','hey','morning','afternoon','evening')&&t.trim().length<14)
       return "Hey! 👋 Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?";
     if(has('worth','value','valuation','sell','selling','list my','price of my','my home','my house','my condo'))
-      return "You can get a <b>free home valuation</b> in about 30 seconds — no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
+      return "You can get a <b>free home valuation</b> in about 30 seconds, no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
     if(has('buy','buying','purchase','first time','first-time','fhsa','hbp','down payment','pre-approval','preapproval','mortgage'))
-      return "Smart move getting informed first. Start with the <a href='guide.html'>First-Time Buyer's Guide →</a> — down payments, the FHSA, and Toronto's land-transfer rebates explained.<br><br>Want Brandon to build you a personalized buying plan?";
+      return "Smart move getting informed first. Start with the <a href='guide.html'>First-Time Buyer's Guide →</a>: down payments, the FHSA, and Toronto's land-transfer rebates explained.<br><br>Want Brandon to build you a personalized buying plan?";
     if(has('commission','fee','charge','cost to sell','how much do you'))
-      return "Brandon's commission is competitive and always discussed upfront — every home is different, so he quotes exact numbers for your place. Want him to run them for you?";
+      return "Brandon's commission is competitive and always discussed upfront. Every home is different, so he quotes exact numbers for your place. Want him to run them for you?";
     if(has('neighbourhood','neighborhood','area','areas','location','where'))
-      return "Brandon covers the whole GTA — <a href='neighborhoods.html'>explore the neighbourhood guides →</a>. Any area in particular catching your eye?";
+      return "Brandon covers the whole GTA: <a href='neighborhoods.html'>explore the neighbourhood guides →</a>. Any area in particular catching your eye?";
     if(has('market','prices','rates','trends','stats'))
-      return "The latest numbers are on the <a href='market.html'>Market Updates →</a> page — refreshed monthly from TRREB data. Anything specific you want to know?";
+      return "The latest numbers are on the <a href='market.html'>Market Updates →</a> page, refreshed monthly from TRREB data. Anything specific you want to know?";
     if(has('contact','reach','email','number','phone'))
-      return "You can reach Brandon directly at <a href='tel:+16479614857'>(647) 961-4857</a> — or I can have him call you. Just say <b>"call me"</b>.";
+      return "You can reach Brandon directly at <a href='tel:+16479614857'>(647) 961-4857</a>, or I can have him call you. Just say <b>"call me"</b>.";
     if(has('who are you','your name','brando'))
-      return "I'm <b>Brando</b> — Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA. 🏠";
-    if(has('thank','thanks','thx','appreciated')) return "Anytime! 😊 Good luck with the move — I'm here if anything else comes up.";
-    if(has('bye','goodbye','see you','later')) return "Talk soon! 👋 And remember — the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
+      return "I'm <b>Brando</b>, Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA. 🏠";
+    if(has('thank','thanks','thx','appreciated')) return "Anytime! 😊 Good luck with the move. I'm here if anything else comes up.";
+    if(has('bye','goodbye','see you','later')) return "Talk soon! 👋 And remember, the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
     if(has('yes','yeah','sure','ok','please do')&&/call|talk|reach|contact/.test(' '+document.title.toLowerCase()))
       {startLead();return null;}
     if(has('yes','yeah','yep','sure','okay','ok','please','definitely'))
-      return "Great — the fastest way is a quick call. Want Brandon to call you? Just say <b>"call me"</b>.";
-    return "I want to make sure you get the right answer — want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up. 📞";
+      return "Great! The fastest way is a quick call. Want Brandon to call you? Just say <b>"call me"</b>.";
+    return "I want to make sure you get the right answer. Want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up. 📞";
   }
   function handleUser(text){
     if(!text.trim())return;
