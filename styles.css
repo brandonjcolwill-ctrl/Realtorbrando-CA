@@ -322,6 +322,10 @@ nav a[aria-current="page"]{color:var(--ink);font-weight:700}
 /* Card hover polish */
 .guide,.listing-card{transition:transform .2s ease,box-shadow .2s ease}
 a.guide:hover,.listing-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+/* Brand frame: stack logo above tagline so they never overlap */
+.brand-frame{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.brand-frame img{flex:1 1 auto;min-height:0;width:100%;height:0;object-fit:contain}
+.brand-note{position:static;flex:0 0 auto;margin:16px 0 0;text-align:center}
 /* CTA band */
 .cta-band{background:var(--ink);color:var(--paper);border-radius:18px;padding:clamp(36px,5vw,60px) clamp(24px,5vw,60px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;margin:30px 0 90px}
 .cta-band h2{color:var(--paper);margin-bottom:10px;font-size:clamp(1.9rem,4vw,3rem)}
