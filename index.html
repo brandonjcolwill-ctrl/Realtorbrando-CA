@@ -259,10 +259,16 @@
     .listing-meta{color:var(--muted);font-size:.92rem;margin:0 0 14px}
     .listing-desc{color:var(--muted);margin:0 0 20px}
     .listing-link{color:var(--accent);font-weight:750;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px}
+    .guide-capture{background:var(--paper)}
+    .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:start}
+    .guide-copy{color:var(--muted);font-size:1.1rem;max-width:520px}
+    .guide-list{list-style:none;margin:28px 0 0;padding:0}
+    .guide-list li{padding:12px 0 12px 28px;position:relative;border-top:1px solid var(--line);color:var(--muted)}
+    .guide-list li::before{content:"";position:absolute;left:2px;top:20px;width:10px;height:10px;background:var(--accent);border-radius:50%}
     .hero-sub{display:block;margin-top:18px;color:var(--muted)}
     .hero-sub a{color:var(--accent);font-weight:750;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
     @media (max-width:900px){
-      .valuation-grid{grid-template-columns:1fr;gap:44px}
+      .valuation-grid,.guide-grid{grid-template-columns:1fr;gap:44px}
       .guide-grid{grid-template-columns:1fr 1fr;gap:0 32px}
       .listing-card{grid-template-columns:1fr}
       .listing-photo{min-height:200px}
@@ -284,6 +290,7 @@
       <a href="#neighborhoods">Neighborhoods</a>
       <a href="#market">Market Updates</a>
       <a href="#listings">Listings</a>
+      <a href="#guide">Free Guide</a>
       <a href="#valuation" class="nav-cta">What&rsquo;s my home worth?</a>
     </nav>
   </header>
@@ -443,6 +450,37 @@
           </article>
         </div>
         <p class="guides-cta">Looking somewhere else in the GTA? <a href="#contact">Ask me about it directly.</a></p>
+      </div>
+    </section>
+
+    <section id="guide" class="guide-capture">
+      <div class="wrap guide-grid">
+        <div>
+          <p class="section-label">Free download</p>
+          <h2>The GTA First-Time Buyer&rsquo;s Guide.</h2>
+          <p class="guide-copy">Buying your first home in the Greater Toronto Area comes with traps most guides gloss over &mdash; Toronto&rsquo;s double land transfer tax, the real cash you need beyond your down payment, and the programs that can save you thousands. This short guide covers all of it in plain English.</p>
+          <ul class="guide-list">
+            <li>Down payment rules, FHSA and the Home Buyers&rsquo; Plan explained</li>
+            <li>Toronto&rsquo;s double land transfer tax &mdash; and up to $8,475 in first-time buyer rebates</li>
+            <li>The full closing-cost checklist, step-by-step buying process and 5 costly mistakes to avoid</li>
+          </ul>
+        </div>
+        <form class="form-card" action="https://formsubmit.co/brandonjcolwill@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New guide download — realtorbrando.ca">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://realtorbrando.ca/gta-first-time-buyers-guide.pdf">
+          <div class="field">
+            <label for="g-name">Full name</label>
+            <input id="g-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="g-email">Email</label>
+            <input id="g-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <button class="button primary form-submit" type="submit">Send me the free guide</button>
+          <p class="form-note">Your details go straight to Brandon &mdash; never shared, never spammed.</p>
+        </form>
       </div>
     </section>
 
