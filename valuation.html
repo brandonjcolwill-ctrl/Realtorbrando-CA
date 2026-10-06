@@ -39,7 +39,7 @@
         <div>
           <p class="section-label">Free home valuation</p>
           <h2>What&rsquo;s your home worth right now?</h2>
-          <p class="valuation-copy">Online estimates don&rsquo;t know your renovations, your street, or what sold next door last month. I&rsquo;ll put together a clear, honest valuation based on recent comparable sales in your area &mdash; no obligation, no pressure.</p>
+          <p class="valuation-copy">Online estimates don&rsquo;t know your renovations, your street, or what sold next door last month. I&rsquo;ll put together a clear, honest valuation based on recent comparable sales in your area. No obligation, no pressure.</p>
           <ul class="valuation-list">
             <li>Recent comparable sales near your home</li>
             <li>What&rsquo;s moving in your area right now</li>
@@ -47,7 +47,7 @@
           </ul>
         </div>
         <form class="form-card" action="https://formsubmit.co/brandonjcolwill@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New home valuation request — realtorbrando.ca">
+          <input type="hidden" name="_subject" value="New home valuation request: realtorbrando.ca">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <div class="field">
@@ -95,7 +95,7 @@
             <textarea id="v-notes" name="notes" rows="3" placeholder="Renovations, timeline, questions&hellip;"></textarea>
           </div>
           <button class="button primary form-submit" type="submit">Request my free valuation</button>
-          <p class="form-note">Your details go straight to Brandon &mdash; never shared, never spammed.</p>
+          <p class="form-note">By submitting, you agree to be contacted by Brandon Colwill (HomeLife District Realty) about your inquiry by email, phone, or text. You can withdraw consent anytime. Your information stays private and is never sold.</p>
         </form>
       </div>
     </section>
@@ -209,12 +209,12 @@
   },7000);
   function startLead(){
     lead={step:1,name:'',phone:'',interest:''};
-    say("Absolutely — Brandon loves talking real estate. What's your <b>full name</b>?");
+    say("Absolutely! Brandon loves talking real estate. What's your <b>full name</b>?");
   }
   function submitLead(){
     var payload={name:lead.name,phone:lead.phone,interest:lead.interest,
       _subject:'Chatbot lead from realtorbrando.ca',
-      message:'New chat lead: '+lead.name+' ('+lead.phone+') — interested in: '+lead.interest};
+      message:'New chat lead: '+lead.name+' ('+lead.phone+'), interested in: '+lead.interest};
     try{
       fetch('https://formsubmit.co/ajax/brandonjcolwill@gmail.com',{method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -237,26 +237,26 @@
     if(has('hi','hello','hey','morning','afternoon','evening')&&t.trim().length<14)
       return "Hey! 👋 Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?";
     if(has('worth','value','valuation','sell','selling','list my','price of my','my home','my house','my condo'))
-      return "You can get a <b>free home valuation</b> in about 30 seconds — no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
+      return "You can get a <b>free home valuation</b> in about 30 seconds, no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
     if(has('buy','buying','purchase','first time','first-time','fhsa','hbp','down payment','pre-approval','preapproval','mortgage'))
-      return "Smart move getting informed first. Start with the <a href='guide.html'>First-Time Buyer's Guide →</a> — down payments, the FHSA, and Toronto's land-transfer rebates explained.<br><br>Want Brandon to build you a personalized buying plan?";
+      return "Smart move getting informed first. Start with the <a href='guide.html'>First-Time Buyer's Guide →</a>: down payments, the FHSA, and Toronto's land-transfer rebates explained.<br><br>Want Brandon to build you a personalized buying plan?";
     if(has('commission','fee','charge','cost to sell','how much do you'))
-      return "Brandon's commission is competitive and always discussed upfront — every home is different, so he quotes exact numbers for your place. Want him to run them for you?";
+      return "Brandon's commission is competitive and always discussed upfront. Every home is different, so he quotes exact numbers for your place. Want him to run them for you?";
     if(has('neighbourhood','neighborhood','area','areas','location','where'))
-      return "Brandon covers the whole GTA — <a href='neighborhoods.html'>explore the neighbourhood guides →</a>. Any area in particular catching your eye?";
+      return "Brandon covers the whole GTA: <a href='neighborhoods.html'>explore the neighbourhood guides →</a>. Any area in particular catching your eye?";
     if(has('market','prices','rates','trends','stats'))
-      return "The latest numbers are on the <a href='market.html'>Market Updates →</a> page — refreshed monthly from TRREB data. Anything specific you want to know?";
+      return "The latest numbers are on the <a href='market.html'>Market Updates →</a> page, refreshed monthly from TRREB data. Anything specific you want to know?";
     if(has('contact','reach','email','number','phone'))
-      return "You can reach Brandon directly at <a href='tel:+16479614857'>(647) 961-4857</a> — or I can have him call you. Just say <b>"call me"</b>.";
+      return "You can reach Brandon directly at <a href='tel:+16479614857'>(647) 961-4857</a>, or I can have him call you. Just say <b>"call me"</b>.";
     if(has('who are you','your name','brando'))
-      return "I'm <b>Brando</b> — Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA. 🏠";
-    if(has('thank','thanks','thx','appreciated')) return "Anytime! 😊 Good luck with the move — I'm here if anything else comes up.";
-    if(has('bye','goodbye','see you','later')) return "Talk soon! 👋 And remember — the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
+      return "I'm <b>Brando</b>, Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA. 🏠";
+    if(has('thank','thanks','thx','appreciated')) return "Anytime! 😊 Good luck with the move. I'm here if anything else comes up.";
+    if(has('bye','goodbye','see you','later')) return "Talk soon! 👋 And remember, the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
     if(has('yes','yeah','sure','ok','please do')&&/call|talk|reach|contact/.test(' '+document.title.toLowerCase()))
       {startLead();return null;}
     if(has('yes','yeah','yep','sure','okay','ok','please','definitely'))
-      return "Great — the fastest way is a quick call. Want Brandon to call you? Just say <b>"call me"</b>.";
-    return "I want to make sure you get the right answer — want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up. 📞";
+      return "Great! The fastest way is a quick call. Want Brandon to call you? Just say <b>"call me"</b>.";
+    return "I want to make sure you get the right answer. Want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up. 📞";
   }
   function handleUser(text){
     if(!text.trim())return;
