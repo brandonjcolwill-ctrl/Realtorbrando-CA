@@ -146,7 +146,7 @@
 <div class="chat-widget">
   <div class="chat-nudge" id="chatNudge" hidden>
     <button class="chat-nudge-close" id="chatNudgeX" aria-label="Dismiss">×</button>
-    <p>👋 Hi! Looking to buy or sell in the GTA? Ask me anything.</p>
+    <p>Hi! Looking to buy or sell in the GTA? Ask me anything.</p>
   </div>
   <div class="chat-panel" id="chatPanel" hidden role="dialog" aria-label="Chat with Brandon's assistant">
     <div class="chat-head">
@@ -193,7 +193,7 @@
       closeBtn=document.getElementById('chatClose');
   if(!fab)return;
   var opened=false,greeted=false,lead={step:0,name:'',phone:'',interest:''};
-  var DEFAULT_CHIPS=["What's my home worth? 🏠","I'm looking to buy","Talk to Brandon 📞"];
+  var DEFAULT_CHIPS=["What's my home worth?","I'm looking to buy","Talk to Brandon"];
   function scrollDown(){msgs.scrollTop=msgs.scrollHeight;}
   function addMsg(html,who){
     var d=document.createElement('div');d.className='chat-msg '+who;
@@ -223,7 +223,7 @@
     panel.hidden=false;fab.classList.add('open');fab.setAttribute('aria-label','Close chat');
     opened=true;nudge.hidden=true;
     if(!greeted){greeted=true;
-      say("Hey! 👋 I'm <b>Brando</b>, Brandon's digital assistant. Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?",DEFAULT_CHIPS);
+      say("Hey! I'm <b>Brando</b>, Brandon's digital assistant. Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?",DEFAULT_CHIPS);
     }
     setTimeout(function(){input.focus();},100);
   }
@@ -251,7 +251,7 @@
         body:JSON.stringify(payload)});
     }catch(_){}
     lead.step=0;
-    say("Done, "+esc(lead.name.split(' ')[0])+"! ✅ Brandon will reach out shortly at <b>"+esc(lead.phone)+"</b>. Anything else I can help with meanwhile?",DEFAULT_CHIPS);
+    say("Done, "+esc(lead.name.split(' ')[0])+"! Brandon will reach out shortly at <b>"+esc(lead.phone)+"</b>. Anything else I can help with meanwhile?",DEFAULT_CHIPS);
   }
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function brain(raw){
@@ -265,7 +265,7 @@
     if(has('call me','call back','have him call','talk to brandon','speak to','human','real person','book','appointment','schedule'))
       {startLead();return null;}
     if(has('hi','hello','hey','morning','afternoon','evening')&&t.trim().length<14)
-      return "Hey! 👋 Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?";
+      return "Hey! Are you looking to <b>buy</b>, <b>sell</b>, or just browsing?";
     if(has('worth','value','valuation','sell','selling','list my','price of my','my home','my house','my condo'))
       return "You can get a <b>free home valuation</b> in about 30 seconds, no strings attached: <a href='valuation.html'>What's My Home Worth →</a><br><br>Or want Brandon to walk you through the numbers on a call?";
     if(has('buy','buying','purchase','first time','first-time','fhsa','hbp','down payment','pre-approval','preapproval','mortgage'))
@@ -279,14 +279,14 @@
     if(has('contact','reach','email','number','phone'))
       return "You can reach Brandon directly at <a href='tel:+16479614857'>(647) 961-4857</a>, or I can have him call you. Just say <b>"call me"</b>.";
     if(has('who are you','your name','brando'))
-      return "I'm <b>Brando</b>, Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA. 🏠";
-    if(has('thank','thanks','thx','appreciated')) return "Anytime! 😊 Good luck with the move. I'm here if anything else comes up.";
-    if(has('bye','goodbye','see you','later')) return "Talk soon! 👋 And remember, the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
+      return "I'm <b>Brando</b>, Brandon Colwill's digital assistant. I answer questions and connect you with Brandon, a Homelife District Realty agent serving the GTA.";
+    if(has('thank','thanks','thx','appreciated')) return "Anytime! Good luck with the move. I'm here if anything else comes up.";
+    if(has('bye','goodbye','see you','later')) return "Talk soon! And remember, the <a href='valuation.html'>free home valuation</a> is always there when curiosity strikes.";
     if(has('yes','yeah','sure','ok','please do')&&/call|talk|reach|contact/.test(' '+document.title.toLowerCase()))
       {startLead();return null;}
     if(has('yes','yeah','yep','sure','okay','ok','please','definitely'))
       return "Great! The fastest way is a quick call. Want Brandon to call you? Just say <b>"call me"</b>.";
-    return "I want to make sure you get the right answer. Want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up. 📞";
+    return "I want to make sure you get the right answer. Want <b>Brandon</b> himself to reach out? Just say <b>"call me"</b> and I'll set it up.";
   }
   function handleUser(text){
     if(!text.trim())return;
