@@ -30,7 +30,7 @@
 <body>
 <header class="site-header" aria-label="Primary navigation">
     <div class="wrap topline">
-      <div class="identity"><a href="index.html" style="text-decoration:none">Brandon Colwill &middot; Real Estate</a></div>
+      <div class="identity"><a href="index.html" style="text-decoration:none"><img src="logo.png" class="identity-logo" alt="Brandon Colwill logo">Brandon Colwill &middot; Real Estate</a></div>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="Pages">
               <a href="index.html">Home</a>
@@ -60,15 +60,15 @@
     <form class="form-card" id="calcForm">
       <div class="field">
         <label for="mc-price">Home price ($)</label>
-        <input id="mc-price" type="number" value="700000" min="0" step="1000" required>
+        <input id="mc-price" type="number" placeholder="700000" min="0" step="1000" required>
       </div>
       <div class="field">
         <label for="mc-down">Down payment (%)</label>
-        <input id="mc-down" type="number" value="10" min="0" max="100" step="0.5" required>
+        <input id="mc-down" type="number" placeholder="10" min="0" max="100" step="0.5" required>
       </div>
       <div class="field">
         <label for="mc-rate">Interest rate (%, annual)</label>
-        <input id="mc-rate" type="number" value="4.5" min="0" max="20" step="0.05" required>
+        <input id="mc-rate" type="number" placeholder="4.5" min="0" max="20" step="0.05" required>
       </div>
       <div class="field">
         <label for="mc-amort">Amortization</label>
@@ -172,6 +172,38 @@
     if(s)s.addEventListener('click',close);
     addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   }
+  /* Listing photo rotator: crossfade through each listing's photos on a timer. */
+  try{
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.listing-photo[data-photos]').forEach(function(box){
+        var urls=box.getAttribute('data-photos').split('|').filter(Boolean);
+        if(urls.length<2)return;
+        var img=box.querySelector('img');
+        if(!img)return;
+        urls.forEach(function(u){var p=new Image();p.src=u;});
+        var i=0,timer=null;
+        function show(n){i=n%urls.length;img.style.opacity='0';setTimeout(function(){img.src=urls[i];img.style.opacity='1';},500);}
+        function start(){if(!timer)timer=setInterval(function(){show(i+1);},4000);}
+        function stop(){if(timer){clearInterval(timer);timer=null;}}
+        if('IntersectionObserver' in window){
+          new IntersectionObserver(function(es){es.forEach(function(en){en.isIntersecting?start():stop();});},{threshold:0.15}).observe(box);
+        }else{start();}
+        document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+      });
+    }
+  }catch(e){}
+  /* Scroll fade-in: sections and cards fade up as they enter the viewport. */
+  try{
+    var els=document.querySelectorAll('main section, .guide, .listing-card, .form-card, .market-post, .faq-item, .cta-band');
+    if('IntersectionObserver' in window && els.length){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}
+        });
+      },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){el.classList.add('reveal');io.observe(el);});
+    }
+  }catch(e){}
 })();
 </script>
 <script>
