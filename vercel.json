@@ -1,3 +1,16 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/market-updates",
+      "destination": "/market",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://realtorbrando.ca/:path*",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.realtorbrando.ca" }]
+    }
+  ]
 }
