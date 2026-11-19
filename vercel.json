@@ -7,6 +7,12 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "destination": "https://realtorbrando.ca/",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.realtorbrando.ca" }]
+    },
+    {
       "source": "/:path*",
       "destination": "https://realtorbrando.ca/:path*",
       "permanent": true,
